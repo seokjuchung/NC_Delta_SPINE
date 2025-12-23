@@ -137,14 +137,22 @@ Same as 1g0p with single proton
 ### Results
 1. Plot: Energy Hist Per category
 2. Check Purity/Efficiency
-    1. 1g0p selection: Check that NC, Baryon Code=0, Category=0, n_protons=0
-    2. 1g1p selection: Check that NC, Baryon Code=0, Category=0, n_protons=1
-    Use `true_mc_category`
-    3. Results
+    1. Use `true_mc_category`
+    * 0: NC ∆->Nγ
+    * 1: NC Other Single Photon
+    * 2: NC π0 (∆ Res)
+    * 3: NC π0 (Other)
+    * 4: NC Charged π
+    * 5: Other NC
+    * 6: CC-Electron
+    * 7: Other CC
+    * 8: Non-neutrino
+
+    2. Results
         1. 1g0p: Total 30828 / 681 --> Eff = 681/938 * 100 = 72.6%, Pur = 681/30828 * 100 = 2.21%
         2. 1g1p: Total 17238 / 500 --> Eff = 500/717 * 100 = 69.7%, Pur = 500/17238 * 100 = 2.90%
         3. Note: This is without gORe separation, so room for improvement.
-    4. After post-separation: How to increase purity? Probably need e/g separation
+    3. After post-separation: How to increase purity? Probably need e/g separation
 
     For ICARUS:
 
@@ -154,10 +162,18 @@ Same as 1g0p with single proton
         4. Shower direction spread < 0.068 (`reco_leading_primay_gOre_directional_spread`)
         5. 1g0p: Total 10266 / 488 --> Eff = 488/938 * 100 = 52.0%, Pur = 4.75%
         6. 1g1p: Total 4215 / 299 --> Eff = 59.8%, Pur = 7.09%
-        
+
     5. Compare with ICARUS values
         1. 88.8%/2.9% before
         2. 71.5%/6.1% After g/e separation
 
 ## To Do
 3. Difference or how to use leading/subleading shower efficiently?
+
+
+# 2025-12-23: Sanity checks
+1. Is the `true_mc_category` actually representing NC Delta Rad?
+Check distribution of `true_mc_category` for `signal_1g0p` and `signal_1g1p` tree. With exception of few O(1) events, all are classified as category 0.
+2. 
+
+Looking at `signal` tree: Compare `reco_` and `true_` value, validate reconstruction.
