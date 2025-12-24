@@ -15,7 +15,7 @@ Category labels used in the notebook
 -----------------------------------
 The plotting cell uses these categories (indices 0..7) with LaTeX formatting:
 - NC $\Delta\rightarrow\gamma$
-- Other NC 1$\gamma$X$_p$
+- Other NC 1 $\gamma$
 - NC $\pi^{0}$
 - NC $\pi^{\pm}$
 - Other NC
