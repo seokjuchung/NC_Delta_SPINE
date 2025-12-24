@@ -3,7 +3,7 @@ NCDelta — flatCAF analysis
 
 Purpose
 -------
-This folder contains analysis code and notes for checking whether the flatCAF 1e20 Monte Carlo sample contains any NC-Delta radiative decay ($(\Delta\rightarrow\gamma)$) signal. It includes a Jupyter notebook that loads selected CAF trees, computes post-selection variables, and produces stacked histograms by true MC category.
+This folder contains analysis code and notes for checking whether the flatCAF 1e20 Monte Carlo sample contains any NC-Delta radiative decay ($\Delta\rightarrow\gamma$) signal. It includes a Jupyter notebook that loads selected CAF trees, computes post-selection variables, and produces stacked histograms by true MC category.
 
 Contents
 --------
