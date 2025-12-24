@@ -63,10 +63,9 @@ jobsub_q -G sbnd --user="$USER"
 1. Jobs are on hold
 Use `jobsub_release $USER`. This will relaunch held jobs with exactly the same condition.
 
-Inspect with `jobsub_q -G SBND --long -J <job_id> | grep -i -e hold`
-
-Add more resources with `+lines='FERMIHTC_GraceMemory=<x>GB' +lifetime, +disk`
-
+2. Deleting problematic files
+`find . -maxdepth 1 -type f -size -10k -delete`
+Find with `find . -maxdepth 1 -type f -size -10k -ls`
 
 # 2025-12-22: Analyzing output from 1e20 MC
 ## Selection: Based on reco variables
@@ -177,3 +176,9 @@ Check distribution of `true_mc_category` for `signal_1g0p` and `signal_1g1p` tre
 2. 
 
 Looking at `signal` tree: Compare `reco_` and `true_` value, validate reconstruction.
+
+
+# 2025-12-24: Looking at grid issues
+Two main reasons why jobs were failing.
+1. `delta_mass_N_MC` and `neutron_momentum` custom gORe varialbes. Disabled for now, shouldn't be too significant
+2. All `mctruth` variables (including thoses which are medulla built-in). Single file `mc1e20/input600-reweighted.flat.caf.root`.
